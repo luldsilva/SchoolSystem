@@ -13,8 +13,32 @@ namespace SchoolSystem.Controllers
         private readonly SchoolService _service = service;
 
         [HttpGet]
-        public IActionResult Get()
-            => Ok(_service.GetAll());
+        public IActionResult Get([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        {
+            var allSchools = _service.GetAll();
+            var totalItems = allSchools.Count();
+
+            var pagedSchools = allSchools
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            return Ok(new
+            {
+                data = pagedSchools,
+                page,
+                pageSize,
+                totalItems
+            });
+        }
+
+        [HttpGet("all")]
+        public IActionResult GetAll()
+        {
+            var allSchools = _service.GetAll();
+            return Ok(allSchools);
+        }
+
 
         [HttpPost]
         public IActionResult Post([FromBody] School school)
