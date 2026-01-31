@@ -31,6 +31,8 @@ Os dados são armazenados **em memória**, por meio de repositórios específico
 
 ---
 
+Front-end do projeto: https://github.com/luldsilva/school-system-front
+
 ## Getting Started
 
 Para obter uma cópia local funcionando, siga estes passos simples.
