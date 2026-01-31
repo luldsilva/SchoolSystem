@@ -45,7 +45,11 @@ Para obter uma cópia local funcionando, siga estes passos simples.
 
 ### Instalação
 
+## OBS: 
+Para efeitos de teste e melhorar a dinâmica, as credenciais de teste estão fixas como user name: TESTE e senha: 123.
+
 1. Clone o repositório:
 
 ```sh
 git clone https://github.com/seu-usuario/SchoolSystem.git
+
